@@ -50,7 +50,7 @@ Function generate($option : Variant; $formula : 4D:C1709.Function) : Collection
 		
 		$command:=This:C1470.escape(This:C1470.executablePath)
 		
-		$command+=" --escape "
+		$command+=" --escape --with-surrogates "
 		
 		Case of 
 			: (Value type:C1509($option.file)=Is object:K8:27) && (OB Instance of:C1731($option.file; 4D:C1709.File)) && ($option.file.exists)
@@ -68,7 +68,7 @@ Function generate($option : Variant; $formula : 4D:C1709.Function) : Collection
 		For each ($arg; OB Entries:C1720($option))
 			$valueType:=Value type:C1509($arg.value)
 			Case of 
-				: (["file"; "help"; "version"; "colorize"; "verbose"; "escape"].includes($arg.key))
+				: (["file"; "help"; "version"; "colorize"; "verbose"; "escape"; "with_surrogates"].includes($arg.key))
 					continue
 				Else 
 					$key:=Replace string:C233($arg.key; "_"; "-"; *)
@@ -84,6 +84,8 @@ Function generate($option : Variant; $formula : 4D:C1709.Function) : Collection
 					End case 
 			End case 
 		End for each 
+		
+		SET TEXT TO PASTEBOARD:C523($command)
 		
 		var $worker : 4D:C1709.SystemWorker
 		$worker:=This:C1470.controller.execute($command; $isStream ? $option.file : Null:C1517; $option.data).worker

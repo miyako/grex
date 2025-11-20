@@ -36,7 +36,6 @@ Else
     */
     
     $results:=$grex.generate([{file: $file; \
-    with_surrogates: True; \
     words: True; \
     non_words: True; \
     spaces: True; \
@@ -46,7 +45,6 @@ Else
     ignore_case: True; \
     capture_groups: True; \
     repetitions: True}; {file: $file; \
-    with_surrogates: True; \
     words: False; \
     non_words: True; \
     spaces: True; \
@@ -66,7 +64,7 @@ Else
     SET TEXT TO PASTEBOARD($results[1])
     
     /*
-        ^(?:Keisuke\sMiyako\Wkeisuke\Wmiyako\W\dD\Wcom\W|\u{5bae}\u{53e4}\u{5553}\u{4ecb}\Wkeisuke\Wmiyako\W\dD\Wcom\W|keisuke\Wmiyako\W\dD\Wcom)$    
+        ^(?:Keisuke\sMiyako\Wkeisuke\Wmiyako\W\dD\Wcom\W|\u5bae\u53e4\u5553\u4ecb\Wkeisuke\Wmiyako\W\dD\Wcom\W|keisuke\Wmiyako\W\dD\Wcom)$    
     */
     
     For each ($regex; $results)

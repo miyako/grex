@@ -21,7 +21,6 @@ file can be file, text, BLOB
 */
 	
 	$results:=$grex.generate([{file: $file; \
-		with_surrogates: True:C214; \
 		words: True:C214; \
 		non_words: True:C214; \
 		spaces: True:C214; \
@@ -31,7 +30,6 @@ file can be file, text, BLOB
 		ignore_case: True:C214; \
 		capture_groups: True:C214; \
 		repetitions: True:C214}; {file: $file; \
-		with_surrogates: True:C214; \
 		words: False:C215; \
 		non_words: True:C214; \
 		spaces: True:C214; \
@@ -51,7 +49,7 @@ file can be file, text, BLOB
 	SET TEXT TO PASTEBOARD:C523($results[1])
 	
 /*
-^(?:Keisuke\sMiyako\Wkeisuke\Wmiyako\W\dD\Wcom\W|\u{5bae}\u{53e4}\u{5553}\u{4ecb}\Wkeisuke\Wmiyako\W\dD\Wcom\W|keisuke\Wmiyako\W\dD\Wcom)$	
+^(?:Keisuke\sMiyako\Wkeisuke\Wmiyako\W\dD\Wcom\W|\u5bae\u53e4\u5553\u4ecb\Wkeisuke\Wmiyako\W\dD\Wcom\W|keisuke\Wmiyako\W\dD\Wcom)$	
 */
 	
 	For each ($regex; $results)
