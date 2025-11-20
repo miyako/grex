@@ -29,8 +29,8 @@ Else
     
     $file.setText($cases.join("\n"))
     
-    var $grex : cs.grex
-    $grex:=cs.grex.new()
+    var $grex : cs.grex.grex
+    $grex:=cs.grex.grex.new()
     /*
         file can be file, text, BLOB
     */
