@@ -1,0 +1,17 @@
+{
+	"methods": {
+		"onResponse": {
+			"timeStamp": "2025-10-01T10:40:43Z",
+			"attributes": {
+				"invisible": true,
+				"preemptive": "capable"
+			}
+		},
+		"TEST_grex": {
+			"timeStamp": "2025-11-20T04:01:50Z",
+			"attributes": {
+				"invisible": true
+			}
+		}
+	}
+}
